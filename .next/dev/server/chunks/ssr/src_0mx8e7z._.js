@@ -142,7 +142,7 @@ const Hero = ()=>{
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
             ref: sectionRef,
             id: "home",
-            className: "relative left-1/2 -mt-32 w-screen -translate-x-1/2",
+            className: "relative w-full -mt-32",
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "pointer-events-none absolute inset-0 z-0 overflow-hidden bg-slate-950 bg-[url('/begrund.png')] bg-cover bg-center bg-no-repeat",
@@ -483,7 +483,7 @@ const Hero = ()=>{
                                             columnNumber: 13
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                                            className: "mb-6 mt-2 min-h-[140px] whitespace-pre-line text-left text-5xl leading-[0.95] font-extrabold tracking-[-0.04em] text-slate-50 md:text-[64px] lg:text-[72px]",
+                                            className: "mb-6 mt-2 min-h-[140px] whitespace-pre-line text-left text-4xl sm:text-5xl leading-[0.95] font-extrabold tracking-[-0.04em] text-slate-50 md:text-[64px] lg:text-[72px]",
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$TextType$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                                                 text: [
                                                     "Membangun Solusi AI\n& Mengedukasi Ribuan Orang"
@@ -508,7 +508,7 @@ const Hero = ()=>{
                                             columnNumber: 13
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "mb-10 max-w-xl text-lg leading-relaxed text-slate-200",
+                                            className: "mb-10 max-w-xl text-base sm:text-lg leading-relaxed text-slate-200",
                                             children: "Software Engineer yang mengkhususkan diri pada Pengembangan AI & Aplikasi Web, sekaligus Kreator Konten di berbagai platform."
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/Hero.tsx",
@@ -516,16 +516,16 @@ const Hero = ()=>{
                                             columnNumber: 13
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "mb-16 flex flex-wrap justify-start gap-4",
+                                            className: "mb-16 flex flex-col sm:flex-row flex-wrap justify-start gap-4 w-full sm:w-auto",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                     href: "#projects",
-                                                    className: "btn-primary group pb-3 pt-3 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5",
+                                                    className: "btn-primary group pb-3 pt-3 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5 w-full sm:w-auto text-center justify-center",
                                                     children: [
                                                         "Lihat Karya Saya ",
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
                                                             size: 16,
-                                                            className: "transition-transform group-hover:translate-x-1"
+                                                            className: "transition-transform group-hover:translate-x-1 inline-block"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/Hero.tsx",
                                                             lineNumber: 143,
@@ -539,12 +539,12 @@ const Hero = ()=>{
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                     href: "#contact",
-                                                    className: "btn-secondary group border-white/[0.16] bg-white/[0.08] !text-slate-50 pb-3 pt-3 hover:bg-white/[0.14] transition-all duration-300 hover:shadow-lg hover:shadow-white/10 hover:-translate-y-0.5",
+                                                    className: "btn-secondary group border-white/[0.16] bg-white/[0.08] !text-slate-50 pb-3 pt-3 hover:bg-white/[0.14] transition-all duration-300 hover:shadow-lg hover:shadow-white/10 hover:-translate-y-0.5 w-full sm:w-auto text-center justify-center",
                                                     children: [
                                                         "Unduh CV ",
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$down$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowDown$3e$__["ArrowDown"], {
                                                             size: 16,
-                                                            className: "transition-transform group-hover:translate-y-1"
+                                                            className: "transition-transform group-hover:translate-y-1 inline-block"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/Hero.tsx",
                                                             lineNumber: 146,
@@ -1194,7 +1194,7 @@ const About = ()=>{
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "absolute top-10 md:top-20 inset-x-0 w-full text-center pointer-events-none z-0 overflow-hidden",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                    className: "text-[100px] md:text-[200px] lg:text-[200px] font-serif italic text-black/[0.15] dark:text-white/[0.10] tracking-tighter leading-[0.8] select-none flex justify-center",
+                                    className: "text-[80px] sm:text-[100px] md:text-[200px] lg:text-[200px] font-serif italic text-black/[0.15] dark:text-white/[0.10] tracking-tighter leading-[0.8] select-none flex justify-center",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$TextPressure$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                                         text: "Tentang Saya",
                                         flex: true,
@@ -1385,7 +1385,7 @@ const About = ()=>{
                                                     columnNumber: 17
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                                    className: "text-6xl md:text-8xl lg:text-[120px] font-black text-slate-900 dark:text-white leading-[0.8] tracking-tighter uppercase drop-shadow-2xl relative z-10",
+                                                    className: "text-5xl sm:text-6xl md:text-8xl lg:text-[120px] font-black text-slate-900 dark:text-white leading-[0.8] tracking-tighter uppercase drop-shadow-2xl relative z-10",
                                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$BlurText$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                                                         text: "RIZKY MEMA",
                                                         delay: 200,
@@ -2810,7 +2810,7 @@ const igUrls = [
 const PhoneMockup = ({ platform, urls })=>{
     const isTikTok = platform === "tiktok";
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "relative w-[300px] sm:w-[320px] h-[600px] sm:h-[650px] bg-black rounded-[45px] border-[8px] border-slate-800 dark:border-slate-900 shadow-[0_0_50px_rgba(0,0,0,0.3)] dark:shadow-[0_0_50px_rgba(255,255,255,0.05)] overflow-hidden ring-1 ring-white/10 shrink-0",
+        className: "relative w-[280px] sm:w-[320px] h-[560px] sm:h-[650px] bg-black rounded-[45px] border-[8px] border-slate-800 dark:border-slate-900 shadow-[0_0_50px_rgba(0,0,0,0.3)] dark:shadow-[0_0_50px_rgba(255,255,255,0.05)] overflow-hidden ring-1 ring-white/10 shrink-0",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "absolute top-2 inset-x-0 mx-auto w-24 h-6 bg-black rounded-full z-50"
@@ -5237,7 +5237,7 @@ function App() {
         isDark
     ]);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
-        className: "w-full relative transition-colors duration-500",
+        className: "w-full relative transition-colors duration-500 overflow-x-hidden",
         style: {
             background: 'var(--bg-color)'
         },

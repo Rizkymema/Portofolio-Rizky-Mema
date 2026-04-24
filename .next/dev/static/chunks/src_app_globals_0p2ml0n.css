@@ -1316,6 +1316,10 @@
     height: 500px;
   }
 
+  .h-\[560px\] {
+    height: 560px;
+  }
+
   .h-\[600px\] {
     height: 600px;
   }
@@ -1396,6 +1400,10 @@
     width: 22rem;
   }
 
+  .w-\[280px\] {
+    width: 280px;
+  }
+
   .w-\[300px\] {
     width: 300px;
   }
@@ -1434,10 +1442,6 @@
 
   .w-full {
     width: 100%;
-  }
-
-  .w-screen {
-    width: 100vw;
   }
 
   .max-w-2xl {
@@ -1714,6 +1718,10 @@
 
   .overflow-hidden {
     overflow: hidden;
+  }
+
+  .overflow-x-hidden {
+    overflow-x: hidden;
   }
 
   .overflow-y-scroll {
@@ -2919,11 +2927,6 @@
     line-height: var(--tw-leading, var(--text-5xl--line-height));
   }
 
-  .text-6xl {
-    font-size: var(--text-6xl);
-    line-height: var(--tw-leading, var(--text-6xl--line-height));
-  }
-
   .text-base {
     font-size: var(--text-base);
     line-height: var(--tw-leading, var(--text-base--line-height));
@@ -2973,8 +2976,8 @@
     font-size: 17px;
   }
 
-  .text-\[100px\] {
-    font-size: 100px;
+  .text-\[80px\] {
+    font-size: 80px;
   }
 
   .leading-\[0\.8\] {
@@ -3250,6 +3253,11 @@
 
   .underline {
     text-decoration-line: underline;
+  }
+
+  .antialiased {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   .opacity-0 {
@@ -4159,6 +4167,12 @@
   }
 
   @media (min-width: 40rem) {
+    .sm\:w-auto {
+      width: auto;
+    }
+  }
+
+  @media (min-width: 40rem) {
     .sm\:grid-cols-2 {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -4197,6 +4211,33 @@
   @media (min-width: 40rem) {
     .sm\:py-32 {
       padding-block: calc(var(--spacing) * 32);
+    }
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:text-5xl {
+      font-size: var(--text-5xl);
+      line-height: var(--tw-leading, var(--text-5xl--line-height));
+    }
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:text-6xl {
+      font-size: var(--text-6xl);
+      line-height: var(--tw-leading, var(--text-6xl--line-height));
+    }
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:text-lg {
+      font-size: var(--text-lg);
+      line-height: var(--tw-leading, var(--text-lg--line-height));
+    }
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:text-\[100px\] {
+      font-size: 100px;
     }
   }
 
