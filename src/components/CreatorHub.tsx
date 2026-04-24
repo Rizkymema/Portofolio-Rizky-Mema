@@ -35,20 +35,20 @@ const PhoneMockup = ({ platform, urls }: { platform: 'tiktok' | 'instagram', url
       </div>
 
       {/* Floating Platform Badge */}
-      <div className="absolute top-10 left-4 z-40 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-2 pointer-events-none">
+      <div className="absolute top-10 left-4 z-40 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full border border-border-subtle flex items-center gap-2 pointer-events-none">
          {isTikTok ? <Video size={14} style={{ color: 'white' }} /> : <Instagram size={14} style={{ color: 'white' }} />}
          <span className="font-bold text-xs" style={{ color: 'white' }}>{isTikTok ? 'TikTok' : 'Instagram'}</span>
       </div>
 
       {/* Scrollable Embed Feed */}
-      <div className="w-full h-full overflow-y-scroll snap-y snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] bg-slate-900 pb-16 pt-16">
+      <div className="w-full h-full overflow-y-scroll snap-y snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] bg-surface pb-16 pt-16">
         {urls.map((url, i) => (
            <SocialEmbed key={i} platform={platform} url={url} />
         ))}
       </div>
 
       {/* Bottom App Navigation Bar (Fake to keep the app feel) */}
-      <div className="absolute bottom-0 inset-x-0 h-16 bg-black flex justify-between items-center px-4 sm:px-6 z-40 border-t border-white/10 pointer-events-none">
+      <div className="absolute bottom-0 inset-x-0 h-16 bg-black flex justify-between items-center px-4 sm:px-6 z-40 border-t border-border-subtle pointer-events-none">
          <div className="flex flex-col items-center gap-1"><div className="w-5 h-5 rounded-sm bg-white/80"></div></div>
          <div className="flex flex-col items-center gap-1"><div className="w-5 h-5 rounded-full bg-white/40"></div></div>
          <div className={`w-10 h-7 sm:w-12 sm:h-8 rounded-xl ${isTikTok ? 'bg-gradient-to-r from-cyan-400 to-pink-500' : 'bg-white'} flex items-center justify-center font-bold ${isTikTok ? 'text-white' : 'text-black'} text-xl shadow-lg`}>+</div>
@@ -74,6 +74,18 @@ export const CreatorHub = () => {
   return (
   <section ref={sectionRef} className="py-24 px-4 sm:px-6 lg:px-12 overflow-hidden relative" id="creator-hub">
 
+    <div className="absolute inset-0 pointer-events-none z-0">
+      <div
+        data-parallax-background
+        className="absolute inset-0 bg-cover bg-center opacity-80 scale-105"
+        style={{
+          backgroundImage: "url('/konten.png')",
+          filter: 'brightness(0.86) saturate(0.96) contrast(1.03)'
+        }}
+      ></div>
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,var(--overlay-section-top)_0%,var(--overlay-section-mid)_35%,var(--overlay-section-bottom)_100%)]"></div>
+    </div>
+
     {/* Parallax background orb */}
     <motion.div
       style={{ y: bgY }}
@@ -89,8 +101,8 @@ export const CreatorHub = () => {
         className="text-center mb-16"
       >
         <span className="pill mb-4 border border-blue-500/20 text-blue-500 bg-blue-500/10 backdrop-blur-md">Pusat Kreator</span>
-        <h3 className="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-4">Konten</h3>
-        <p className="text-slate-600 dark:text-slate-400 font-medium">Video edukasi dapat langsung Anda putar di bawah ini tanpa meninggalkan halaman.</p>
+        <h3 className="text-4xl md:text-5xl font-extrabold text-content mb-4">Konten</h3>
+        <p className="text-content-muted font-medium">Video edukasi dapat langsung Anda putar di bawah ini tanpa meninggalkan halaman.</p>
       </motion.div>
 
       <div className="flex flex-col md:flex-row justify-center items-center gap-10 md:gap-16">

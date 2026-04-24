@@ -14,6 +14,18 @@ export const Experience = () => {
   return (
   <section ref={sectionRef} className="py-24 px-6 sm:px-12 relative overflow-hidden" id="experience">
 
+    <div className="absolute inset-0 pointer-events-none z-0">
+      <div
+        data-parallax-background
+        className="absolute inset-0 bg-cover bg-center opacity-80 scale-105"
+        style={{
+          backgroundImage: "url('/pengalaman.png')",
+          filter: 'brightness(0.92) saturate(1.04) contrast(1.04)'
+        }}
+      ></div>
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,var(--overlay-section-top)_0%,var(--overlay-section-mid)_35%,var(--overlay-section-bottom)_100%)]"></div>
+    </div>
+
     {/* Parallax background blobs */}
     <motion.div
       style={{ y: bgY1 }}
@@ -44,7 +56,7 @@ export const Experience = () => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
           viewport={{ once: true, margin: "-50px" }}
-          className="glass-card hover:bg-black/[0.05] dark:hover:bg-white/[0.05] transition duration-300">
+          className="glass-card hover:bg-bg-tertiary transition duration-300">
           <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-6">
             <div>
               <h4 className="text-2xl font-extrabold mb-1">Software Engineer</h4>
@@ -52,7 +64,7 @@ export const Experience = () => {
             </div>
             <span className="mt-4 md:mt-0 pill border-blue-500/30 text-blue-400 bg-blue-500/10">2026 - Sekarang</span>
           </div>
-          <ul className="space-y-3 text-slate-600 dark:text-slate-400">
+          <ul className="space-y-3 text-content-muted">
             <li className="flex gap-3">
               <span className="text-blue-500 mt-0.5 font-bold">▹</span>
               <p>Mengembangkan dan memelihara sistem perangkat lunak secara berkelanjutan serta mengoptimalkan performa aplikasi.</p>
@@ -66,7 +78,7 @@ export const Experience = () => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
           viewport={{ once: true, margin: "-50px" }}
-          className="glass-card hover:bg-black/[0.05] dark:hover:bg-white/[0.05] transition duration-300">
+          className="glass-card hover:bg-bg-tertiary transition duration-300">
           <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-6">
             <div>
               <h4 className="text-2xl font-extrabold mb-1">Ketua Departemen Multimedia & Jurnalistik</h4>
@@ -74,7 +86,7 @@ export const Experience = () => {
             </div>
             <span className="mt-4 md:mt-0 pill border-purple-500/30 text-purple-400 bg-purple-500/10">Maret 2024 – Maret 2025</span>
           </div>
-          <ul className="space-y-3 text-slate-600 dark:text-slate-400">
+          <ul className="space-y-3 text-content-muted">
             <li className="flex gap-3">
               <span className="text-purple-500 mt-0.5 font-bold">▹</span>
               <p>Memimpin tim multimedia dalam merancang dan memproduksi konten visual serta jurnalistik untuk keperluan himpunan mahasiswa.</p>
@@ -92,7 +104,7 @@ export const Experience = () => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
           viewport={{ once: true, margin: "-50px" }}
-          className="glass-card hover:bg-black/[0.05] dark:hover:bg-white/[0.05] transition duration-300">
+          className="glass-card hover:bg-bg-tertiary transition duration-300">
           <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-6">
             <div>
               <h4 className="text-2xl font-extrabold mb-1">Anggota Divisi Publikasi & Dokumentasi</h4>
@@ -100,7 +112,7 @@ export const Experience = () => {
             </div>
             <span className="mt-4 md:mt-0 pill border-pink-500/30 text-pink-400 bg-pink-500/10">April 2024 – April 2025</span>
           </div>
-          <ul className="space-y-3 text-slate-600 dark:text-slate-400">
+          <ul className="space-y-3 text-content-muted">
             <li className="flex gap-3">
               <span className="text-pink-500 mt-0.5 font-bold">▹</span>
               <p>Mengelola publikasi kegiatan UKM melalui media sosial dan saluran komunikasi resmi organisasi.</p>
@@ -118,7 +130,7 @@ export const Experience = () => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
           viewport={{ once: true, margin: "-50px" }}
-          className="glass-card hover:bg-black/[0.05] dark:hover:bg-white/[0.05] transition duration-300">
+          className="glass-card hover:bg-bg-tertiary transition duration-300">
            <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-6">
             <div>
               <h4 className="text-2xl font-extrabold mb-1">Anggota Tim Inti</h4>
@@ -126,7 +138,7 @@ export const Experience = () => {
             </div>
             <span className="mt-4 md:mt-0 pill border-emerald-500/30 text-emerald-400 bg-emerald-500/10">2024 – 2025</span>
           </div>
-          <ul className="space-y-3 text-slate-600 dark:text-slate-400">
+          <ul className="space-y-3 text-content-muted">
             <li className="flex gap-3">
               <span className="text-emerald-500 mt-0.5 font-bold">▹</span>
               <p>Terlibat aktif dalam pengembangan produk dan perumusan strategi bisnis startup Orders.</p>

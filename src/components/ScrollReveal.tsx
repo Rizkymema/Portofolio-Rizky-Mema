@@ -59,7 +59,7 @@ export default function ScrollReveal({
   const words = children.split(' ');
 
   return (
-    <div ref={containerRef} className={`flex flex-wrap ${className}`}>
+    <div ref={containerRef} className={`relative flex flex-wrap ${className}`}>
       {words.map((word, i) => {
         const start = i / words.length;
         const end = start + (1 / words.length);

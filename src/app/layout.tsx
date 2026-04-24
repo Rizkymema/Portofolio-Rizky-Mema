@@ -14,7 +14,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark scroll-smooth">
       <body className="relative antialiased">
-        {children}
+        <div className="relative z-10">
+          {children}
+        </div>
       </body>
     </html>
   );

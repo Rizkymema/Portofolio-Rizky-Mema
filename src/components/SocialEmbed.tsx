@@ -47,13 +47,13 @@ export const SocialEmbed: React.FC<SocialEmbedProps> = ({ platform, url }) => {
   if (isProfileLink) {
     return (
       <div className="w-full flex justify-center bg-transparent shrink-0 snap-start my-4 px-4">
-        <a href={url} target="_blank" rel="noreferrer" className="w-full max-w-[320px] bg-slate-800 rounded-2xl border border-white/10 p-6 flex flex-col items-center gap-4 hover:bg-slate-700 transition-colors shadow-xl">
+        <a href={url} target="_blank" rel="noreferrer" className="w-full max-w-[320px] bg-slate-800 rounded-2xl border border-border-subtle p-6 flex flex-col items-center gap-4 hover:bg-slate-700 transition-colors shadow-xl">
            <div className="w-16 h-16 rounded-full bg-gradient-to-tr from-blue-500 to-purple-500 flex items-center justify-center text-white font-bold text-xl shadow-lg border-2 border-white">
               {platform === 'tiktok' ? '🎵' : '📷'}
            </div>
            <div className="text-center">
               <h4 className="text-white font-bold text-lg mb-1">@{url.includes('tiktok') ? 'rizkymema' : 'rizkymema'}</h4>
-              <p className="text-slate-400 text-sm mb-4">Kunjungi Profil {platform === 'tiktok' ? 'TikTok' : 'Instagram'}</p>
+              <p className="text-content-muted text-sm mb-4">Kunjungi Profil {platform === 'tiktok' ? 'TikTok' : 'Instagram'}</p>
               <button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded-full text-sm transition-all shadow-md w-full">
                 Lihat Semua Konten
               </button>
