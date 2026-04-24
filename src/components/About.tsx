@@ -29,7 +29,7 @@ export const About = () => {
 
           {/* Background Italic Text */}
           <div className="absolute top-10 md:top-20 inset-x-0 w-full text-center pointer-events-none z-0 overflow-hidden">
-            <h2 className="text-[100px] md:text-[200px] lg:text-[200px] font-serif italic text-black/[0.15] dark:text-white/[0.10] tracking-tighter leading-[0.8] select-none flex justify-center">
+            <h2 className="text-[80px] sm:text-[100px] md:text-[200px] lg:text-[200px] font-serif italic text-black/[0.15] dark:text-white/[0.10] tracking-tighter leading-[0.8] select-none flex justify-center">
               <TextPressure
                 text="Tentang Saya"
                 flex
@@ -100,7 +100,7 @@ export const About = () => {
                 <span className="text-3xl md:text-5xl lg:text-[70px] font-serif italic text-slate-700 dark:text-slate-300 mb-2 md:-mb-4 normal-case font-medium drop-shadow-lg z-20 relative">
                   <BlurText text="Hello, I'm" delay={200} animateBy="words" direction="top" className="inline-flex" />
                 </span>
-                <h2 className="text-6xl md:text-8xl lg:text-[120px] font-black text-slate-900 dark:text-white leading-[0.8] tracking-tighter uppercase drop-shadow-2xl relative z-10">
+                <h2 className="text-5xl sm:text-6xl md:text-8xl lg:text-[120px] font-black text-slate-900 dark:text-white leading-[0.8] tracking-tighter uppercase drop-shadow-2xl relative z-10">
                   <BlurText text="RIZKY MEMA" delay={200} animateBy="words" direction="top" className="inline-flex" />
                 </h2>
               </div>

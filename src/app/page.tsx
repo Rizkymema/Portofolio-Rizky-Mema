@@ -34,7 +34,7 @@ export default function App() {
   }, [isDark]);
 
   return (
-    <main className="w-full relative transition-colors duration-500" style={{ background: 'var(--bg-color)' }}>
+    <main className="w-full relative transition-colors duration-500 overflow-x-hidden" style={{ background: 'var(--bg-color)' }}>
       {/* Top Nav */}
       <nav className="fixed top-6 inset-x-4 md:inset-x-0 mx-auto max-w-5xl bg-white/60 dark:bg-[#0b1228]/60 backdrop-blur-2xl border border-black/5 dark:border-white/10 px-4 md:px-6 py-3 rounded-full z-50 shadow-lg shadow-black/5 transition-colors duration-500">
         <div className="absolute inset-0 w-full h-full bg-gradient-to-b from-white/20 to-transparent dark:from-white/5 dark:to-transparent rounded-full -z-10 pointer-events-none"></div>

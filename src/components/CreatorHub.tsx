@@ -19,7 +19,7 @@ const PhoneMockup = ({ platform, urls }: { platform: 'tiktok' | 'instagram', url
   const isTikTok = platform === "tiktok";
 
   return (
-    <div className="relative w-[300px] sm:w-[320px] h-[600px] sm:h-[650px] bg-black rounded-[45px] border-[8px] border-slate-800 dark:border-slate-900 shadow-[0_0_50px_rgba(0,0,0,0.3)] dark:shadow-[0_0_50px_rgba(255,255,255,0.05)] overflow-hidden ring-1 ring-white/10 shrink-0">
+    <div className="relative w-[280px] sm:w-[320px] h-[560px] sm:h-[650px] bg-black rounded-[45px] border-[8px] border-slate-800 dark:border-slate-900 shadow-[0_0_50px_rgba(0,0,0,0.3)] dark:shadow-[0_0_50px_rgba(255,255,255,0.05)] overflow-hidden ring-1 ring-white/10 shrink-0">
       
       {/* Notch */}
       <div className="absolute top-2 inset-x-0 mx-auto w-24 h-6 bg-black rounded-full z-50"></div>

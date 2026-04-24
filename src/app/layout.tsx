@@ -13,7 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark scroll-smooth">
-      <body>
+      <body className="relative antialiased">
         {children}
       </body>
     </html>

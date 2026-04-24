@@ -17,7 +17,7 @@ export const Hero = () => {
       <section
         ref={sectionRef}
         id="home"
-        className="relative left-1/2 -mt-32 w-screen -translate-x-1/2"
+        className="relative w-full -mt-32"
       >
       {/* Background layer dipindahkan ke dalam section agar hanya muncul di beranda */}
       <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden bg-slate-950 bg-[url('/begrund.png')] bg-cover bg-center bg-no-repeat">
@@ -119,7 +119,7 @@ export const Hero = () => {
 
             </div>
 
-            <h1 className="mb-6 mt-2 min-h-[140px] whitespace-pre-line text-left text-5xl leading-[0.95] font-extrabold tracking-[-0.04em] text-slate-50 md:text-[64px] lg:text-[72px]">
+            <h1 className="mb-6 mt-2 min-h-[140px] whitespace-pre-line text-left text-4xl sm:text-5xl leading-[0.95] font-extrabold tracking-[-0.04em] text-slate-50 md:text-[64px] lg:text-[72px]">
               <TextType
                 text={["Membangun Solusi AI\n& Mengedukasi Ribuan Orang"]}
                 typingSpeed={75}
@@ -134,16 +134,16 @@ export const Hero = () => {
               />
             </h1>
 
-            <p className="mb-10 max-w-xl text-lg leading-relaxed text-slate-200">
+            <p className="mb-10 max-w-xl text-base sm:text-lg leading-relaxed text-slate-200">
               Software Engineer yang mengkhususkan diri pada Pengembangan AI & Aplikasi Web, sekaligus Kreator Konten di berbagai platform.
             </p>
 
-            <div className="mb-16 flex flex-wrap justify-start gap-4">
-              <a href="#projects" className="btn-primary group pb-3 pt-3 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5">
-                Lihat Karya Saya <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+            <div className="mb-16 flex flex-col sm:flex-row flex-wrap justify-start gap-4 w-full sm:w-auto">
+              <a href="#projects" className="btn-primary group pb-3 pt-3 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5 w-full sm:w-auto text-center justify-center">
+                Lihat Karya Saya <ArrowRight size={16} className="transition-transform group-hover:translate-x-1 inline-block" />
               </a>
-              <a href="#contact" className="btn-secondary group border-white/[0.16] bg-white/[0.08] !text-slate-50 pb-3 pt-3 hover:bg-white/[0.14] transition-all duration-300 hover:shadow-lg hover:shadow-white/10 hover:-translate-y-0.5">
-                Unduh CV <ArrowDown size={16} className="transition-transform group-hover:translate-y-1" />
+              <a href="#contact" className="btn-secondary group border-white/[0.16] bg-white/[0.08] !text-slate-50 pb-3 pt-3 hover:bg-white/[0.14] transition-all duration-300 hover:shadow-lg hover:shadow-white/10 hover:-translate-y-0.5 w-full sm:w-auto text-center justify-center">
+                Unduh CV <ArrowDown size={16} className="transition-transform group-hover:translate-y-1 inline-block" />
               </a>
             </div>
 
