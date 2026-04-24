@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, CSSProperties } from 'react';
 import { gsap } from 'gsap';
 import './PillNav.css';
 
@@ -240,7 +240,7 @@ const PillNav = ({
     ['--pill-bg']: pillColor,
     ['--hover-text']: hoveredPillTextColor,
     ['--pill-text']: resolvedPillTextColor
-  };
+  } as CSSProperties;
 
   return (
     <div className="pill-nav-container">

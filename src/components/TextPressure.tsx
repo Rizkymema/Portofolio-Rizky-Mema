@@ -79,7 +79,7 @@ const TextPressure: React.FC<TextPressureProps> = ({
           return (
             <span
               key={index}
-              ref={el => spanRefs.current[index] = el}
+              ref={(el) => { spanRefs.current[index] = el; }}
               style={{
                 color: textColor, // if undefined, inherits from parent
                 opacity,
