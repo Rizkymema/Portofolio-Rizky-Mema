@@ -1,0 +1,243 @@
+/* [project]/src/components/PillNav.css [app-client] (css) */
+.pill-nav-container {
+  justify-content: center;
+  align-items: center;
+  min-width: 0;
+  display: flex;
+  position: static;
+}
+
+@media (max-width: 768px) {
+  .pill-nav-container {
+    width: 100%;
+  }
+}
+
+.pill-nav {
+  --nav-h: 42px;
+  --logo: 36px;
+  --pill-pad-x: 18px;
+  --pill-gap: 3px;
+  box-sizing: border-box;
+  align-items: center;
+  width: max-content;
+  min-width: 0;
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .pill-nav {
+    background: none;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 1rem;
+  }
+}
+
+.pill-nav-items {
+  height: var(--nav-h);
+  background: none;
+  border-radius: 9999px;
+  align-items: center;
+  min-width: 0;
+  display: flex;
+  position: relative;
+}
+
+.pill-logo {
+  width: var(--nav-h);
+  height: var(--nav-h);
+  background: var(--base, #000);
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  display: inline-flex;
+  overflow: hidden;
+}
+
+.pill-logo img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.pill-list {
+  align-items: stretch;
+  gap: var(--pill-gap);
+  height: 100%;
+  margin: 0;
+  padding: 3px;
+  list-style: none;
+  display: flex;
+}
+
+.pill-list > li {
+  height: 100%;
+  display: flex;
+}
+
+.pill {
+  height: 100%;
+  padding: 0 var(--pill-pad-x);
+  background: var(--pill-bg, #fff);
+  color: var(--pill-text, var(--base, #000));
+  box-sizing: border-box;
+  text-transform: uppercase;
+  letter-spacing: .2px;
+  white-space: nowrap;
+  cursor: pointer;
+  border-radius: 9999px;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 0;
+  text-decoration: none;
+  display: inline-flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.pill .hover-circle {
+  background: var(--base, #000);
+  z-index: 1;
+  pointer-events: none;
+  will-change: transform;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+}
+
+.pill .label-stack {
+  z-index: 2;
+  line-height: 1;
+  display: inline-block;
+  position: relative;
+}
+
+.pill .pill-label {
+  z-index: 2;
+  will-change: transform;
+  line-height: 1;
+  display: inline-block;
+  position: relative;
+}
+
+.pill .pill-label-hover {
+  color: var(--hover-text, #fff);
+  z-index: 3;
+  will-change: transform, opacity;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.pill.is-active:after {
+  content: "";
+  background: var(--base, #000);
+  z-index: 4;
+  border-radius: 50%;
+  width: 4px;
+  height: 4px;
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.desktop-only {
+  display: block;
+}
+
+.mobile-only {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none;
+  }
+
+  .mobile-only {
+    display: block;
+  }
+}
+
+.mobile-menu-button {
+  width: var(--nav-h);
+  height: var(--nav-h);
+  background: var(--base, #000);
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  padding: 0;
+  display: none;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-button {
+    display: flex;
+  }
+}
+
+.hamburger-line {
+  background: var(--pill-bg, #fff);
+  transform-origin: center;
+  border-radius: 1px;
+  width: 16px;
+  height: 2px;
+  transition: all 10ms;
+}
+
+.mobile-menu-popover {
+  background: var(--base, #f0f0f0);
+  z-index: 998;
+  opacity: 0;
+  transform-origin: top;
+  visibility: hidden;
+  border-radius: 27px;
+  position: absolute;
+  top: 3em;
+  left: 1rem;
+  right: 1rem;
+  box-shadow: 0 8px 32px #0000001f;
+}
+
+.mobile-menu-list {
+  flex-direction: column;
+  gap: 3px;
+  margin: 0;
+  padding: 3px;
+  list-style: none;
+  display: flex;
+}
+
+.mobile-menu-popover .mobile-menu-link {
+  color: var(--pill-text, #fff);
+  background-color: var(--pill-bg, #fff);
+  border-radius: 50px;
+  padding: 12px 16px;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all .2s;
+  display: block;
+}
+
+.mobile-menu-popover .mobile-menu-link:hover {
+  cursor: pointer;
+  background-color: var(--base);
+  color: var(--hover-text, #fff);
+}
+
+/*# sourceMappingURL=src_components_PillNav_0oupal3.css.map*/
