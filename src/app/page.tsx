@@ -8,7 +8,6 @@ import { FeaturedProjects } from '../components/FeaturedProjects';
 import { CreatorHub } from '../components/CreatorHub';
 import { Experience } from '../components/Experience';
 import { Certifications } from '../components/Certifications';
-import { Blog } from '../components/Blog';
 import { Contact } from '../components/Contact';
 import { Footer } from '../components/Footer';
 import { ScrollSnapContainer, ScrollSnapSection } from '../components/ScrollSnapSections';
@@ -40,7 +39,6 @@ export default function App() {
     { label: 'CONTENT', link: '#creator-hub' },
     { label: 'EXPERIENCE', link: '#experience' },
     { label: 'CERTIFICATIONS', link: '#certifications' },
-    { label: 'BLOG', link: '#blog' },
     { label: 'CONTACT', link: '#contact' }
   ];
 
@@ -194,10 +192,6 @@ export default function App() {
 
           <ScrollSnapSection className="portfolio-section-shell">
             <Certifications />
-          </ScrollSnapSection>
-
-          <ScrollSnapSection className="portfolio-section-shell">
-            <Blog />
           </ScrollSnapSection>
 
           <ScrollSnapSection className="portfolio-section-shell">

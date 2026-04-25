@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence, animate } from 'motion/react';
 import type { Variants } from 'motion/react';
 
 interface PreloaderProps {
@@ -10,6 +10,16 @@ interface PreloaderProps {
 
 export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
   const [isVisible, setIsVisible] = useState(true);
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const controls = animate(0, 100, {
+      duration: 2.2,
+      ease: "easeOut",
+      onUpdate: (value) => setProgress(Math.floor(value)),
+    });
+    return () => controls.stop();
+  }, []);
 
   useEffect(() => {
     // Set a timer to hide the preloader after a few seconds
@@ -19,7 +29,7 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
       setTimeout(() => {
         onComplete();
       }, 800); // match exit transition duration
-    }, 2500); // 2.5 seconds loading time
+    }, 3000); // 3 seconds loading time
 
     return () => clearTimeout(timer);
   }, [onComplete]);
@@ -48,7 +58,7 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
     },
   };
 
-  const words = "Welcome to portofolio website".split(" ");
+  const words = "Welcome to my portofolio".split(" ");
 
   return (
     <AnimatePresence>
@@ -69,7 +79,7 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="relative z-10 flex space-x-3 text-3xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter"
+            className="relative z-10 flex flex-wrap justify-center gap-2 md:gap-3 text-3xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter text-center px-4"
           >
             {words.map((word, index) => (
               <motion.span key={index} variants={itemVariants} className="block drop-shadow-2xl">
@@ -79,15 +89,27 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
           </motion.div>
 
           <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            className="mt-8 relative z-10 flex items-center justify-center drop-shadow-lg"
+          >
+            <span className="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-br from-blue-400 to-purple-500">
+              {progress}
+            </span>
+            <span className="text-3xl md:text-5xl ml-1 text-white/80 font-bold">%</span>
+          </motion.div>
+
+          <motion.div
             initial={{ scaleX: 0, opacity: 0 }}
             animate={{ scaleX: 1, opacity: 1 }}
-            transition={{ duration: 1.5, delay: 0.8, ease: "circOut" }}
+            transition={{ duration: 0.5, delay: 0.2, ease: "circOut" }}
             className="absolute bottom-1/4 w-48 md:w-64 h-1 bg-white/20 rounded-full overflow-hidden"
           >
             <motion.div
               initial={{ x: "-100%" }}
               animate={{ x: "0%" }}
-              transition={{ duration: 1.8, ease: "easeInOut" }}
+              transition={{ duration: 2.2, ease: "easeOut" }}
               className="w-full h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"
             />
           </motion.div>
