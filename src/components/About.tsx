@@ -1,16 +1,48 @@
 import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'motion/react';
+import { motion, useScroll, useTransform, useMotionTemplate } from 'motion/react';
 import ScrollReveal from './ScrollReveal';
-import BlurText from './BlurText';
-import TextPressure from './TextPressure';
 import ScrollVelocity from './ScrollVelocity';
 
 export const About = () => {
   const containerRef = useRef<HTMLElement>(null);
+  const posterRef = useRef<HTMLDivElement>(null);
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"]
   });
+
+  // Scroll progress khusus untuk poster section
+  const { scrollYProgress: posterProgress } = useScroll({
+    target: posterRef,
+    offset: ["start 90%", "end 20%"]
+  });
+
+  // --- Pill "Terbuka untuk peluang baru" (muncul pertama: 0.0 → 0.25) ---
+  const pillOpacity = useTransform(posterProgress, [0.0, 0.15, 0.25], [0, 0.6, 1]);
+  const pillX = useTransform(posterProgress, [0.0, 0.25], [-60, 0]);
+  const pillBlurVal = useTransform(posterProgress, [0.0, 0.2], [12, 0]);
+  const pillFilter = useMotionTemplate`blur(${pillBlurVal}px)`;
+  const pillScale = useTransform(posterProgress, [0.0, 0.25], [0.9, 1]);
+
+  // --- Card "Spesialisasi" (muncul kedua: 0.08 → 0.32) ---
+  const cardOpacity = useTransform(posterProgress, [0.08, 0.2, 0.32], [0, 0.6, 1]);
+  const cardX = useTransform(posterProgress, [0.08, 0.32], [60, 0]);
+  const cardBlurVal = useTransform(posterProgress, [0.08, 0.28], [12, 0]);
+  const cardFilter = useMotionTemplate`blur(${cardBlurVal}px)`;
+  const cardScale = useTransform(posterProgress, [0.08, 0.32], [0.9, 1]);
+
+  // --- "Hello, I'm Rizky Mema" (muncul ketiga: 0.18 → 0.45) ---
+  const nameOpacity = useTransform(posterProgress, [0.18, 0.32, 0.45], [0, 0.6, 1]);
+  const nameY = useTransform(posterProgress, [0.18, 0.45], [50, 0]);
+  const nameBlurVal = useTransform(posterProgress, [0.18, 0.40], [10, 0]);
+  const nameFilter = useMotionTemplate`blur(${nameBlurVal}px)`;
+
+  // --- "Software Engineer" (muncul keempat: 0.25 → 0.50) ---
+  const roleOpacity = useTransform(posterProgress, [0.25, 0.38, 0.50], [0, 0.6, 1]);
+  const roleY = useTransform(posterProgress, [0.25, 0.50], [50, 0]);
+  const roleBlurVal = useTransform(posterProgress, [0.25, 0.45], [10, 0]);
+  const roleFilter = useMotionTemplate`blur(${roleBlurVal}px)`;
 
   // Efek parallax: gambar bergerak dari Y 80 ke Y -80 saat digulir
   const imageY = useTransform(scrollYProgress, [0, 1], [80, -80]);
@@ -30,7 +62,7 @@ export const About = () => {
       <div className="max-w-7xl mx-auto relative">
 
         {/* 1. Magazine Poster Layout Section */}
-        <div data-video-scrub-end className="relative left-1/2 w-screen -translate-x-1/2 min-h-[550px] md:min-h-[700px] overflow-hidden mb-0">
+        <div ref={posterRef} data-video-scrub-end className="relative left-1/2 w-screen -translate-x-1/2 min-h-[550px] md:min-h-[700px] overflow-hidden mb-0">
 
           <div className="absolute inset-0 pointer-events-none z-0">
             <div
@@ -48,7 +80,7 @@ export const About = () => {
           {/* Background Scroll Velocity Text */}
           <div className="absolute top-8 md:top-16 inset-x-0 w-full pointer-events-none z-[1] overflow-hidden select-none">
             <ScrollVelocity
-              texts={['Tentang Saya', 'Software Engineer']}
+              texts={['Rizky Mema', 'Software Engineer']}
               velocity={80}
               className="scroll-velocity-bg"
               numCopies={6}
@@ -59,25 +91,31 @@ export const About = () => {
 
           <div className="relative z-10 max-w-7xl mx-auto w-full min-h-[550px] md:min-h-[700px] flex justify-center items-end pb-0 pt-16 md:pt-24 px-4 sm:px-6 lg:px-8">
             {/* Floating Elements */}
-            {/* Left Pill */}
+            {/* Left Pill — scroll-driven reveal */}
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="absolute top-[20%] md:top-[35%] left-4 lg:left-10 z-20 flex items-center gap-3 bg-bg-secondary/80  border border-border-subtle backdrop-blur-xl py-2 md:py-3 px-4 md:px-5 rounded-full shadow-2xl"
+              style={{
+                opacity: pillOpacity,
+                x: pillX,
+                scale: pillScale,
+                filter: pillFilter,
+              }}
+              className="absolute top-[20%] md:top-[35%] left-4 lg:left-10 z-20 flex items-center gap-3 bg-bg-secondary/80 border border-border-subtle backdrop-blur-xl py-2 md:py-3 px-4 md:px-5 rounded-full shadow-2xl will-change-transform"
             >
               <span className="w-2.5 h-2.5 rounded-full bg-blue-500 animate-pulse shadow-[0_0_10px_rgba(59,130,246,0.8)]"></span>
               <span className="text-[10px] md:text-xs font-bold text-content-secondary uppercase tracking-widest">Terbuka untuk peluang baru</span>
             </motion.div>
 
-            {/* Right Desc */}
+            {/* Right Desc — scroll-driven reveal */}
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="absolute top-[28%] md:top-[35%] right-4 lg:right-10 z-20 max-w-[220px] text-right hidden md:block"
+              style={{
+                opacity: cardOpacity,
+                x: cardX,
+                scale: cardScale,
+                filter: cardFilter,
+              }}
+              className="absolute top-[28%] md:top-[35%] right-4 lg:right-10 z-20 max-w-[220px] text-right hidden md:block will-change-transform"
             >
-              <div className="bg-surface-hover  backdrop-blur-xl p-4 md:p-5 rounded-2xl border border-border-subtle shadow-2xl">
+              <div className="bg-surface-hover backdrop-blur-xl p-4 md:p-5 rounded-2xl border border-border-subtle shadow-2xl">
                 <p className="text-xs font-semibold text-content-secondary dark:text-content-muted uppercase tracking-widest leading-relaxed">
                   Spesialisasi dalam <br /><strong className="text-content">AI Development</strong> <br />& <strong className="text-content">Software Engineering</strong>
                 </p>
@@ -116,32 +154,37 @@ export const About = () => {
             {/* Bottom Texts Layer */}
             <div className="absolute inset-x-0 bottom-0 md:bottom-10 z-30 flex flex-col md:flex-row justify-between items-center md:items-end px-2 lg:px-0 pointer-events-none text-center md:text-left gap-4 md:gap-0 pb-6 md:pb-0">
 
-              {/* Bottom Left Huge Text */}
+              {/* Bottom Left Huge Text — scroll-driven reveal */}
               <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
+                style={{
+                  opacity: nameOpacity,
+                  y: nameY,
+                  filter: nameFilter,
+                }}
+                className="will-change-transform"
               >
                 <div className="flex flex-col items-center md:items-start text-center md:text-left">
                   <span className="text-3xl md:text-5xl lg:text-[70px] font-serif italic text-content-secondary mb-2 md:-mb-4 normal-case font-medium drop-shadow-lg z-20 relative">
-                    <BlurText text="Hello, I'm" delay={200} animateBy="words" direction="top" className="inline-flex" />
+                    Hello, I'm
                   </span>
                   <h2 className="text-5xl sm:text-6xl md:text-8xl lg:text-[120px] font-black text-content leading-[0.8] tracking-tighter uppercase drop-shadow-2xl relative z-10">
-                    <BlurText text="RIZKY MEMA" delay={200} animateBy="words" direction="top" className="inline-flex" />
+                    RIZKY MEMA
                   </h2>
                 </div>
               </motion.div>
 
-              {/* Bottom Right Huge Text */}
+              {/* Bottom Right Huge Text — scroll-driven reveal */}
               <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                className="md:text-right"
+                style={{
+                  opacity: roleOpacity,
+                  y: roleY,
+                  filter: roleFilter,
+                }}
+                className="md:text-right will-change-transform"
               >
                 <h2 className="text-3xl md:text-5xl lg:text-[80px] font-black text-content-secondary dark:text-content-muted leading-[0.85] tracking-tighter uppercase drop-shadow-2xl">
-                  <BlurText text="SOFTWARE" delay={200} animateBy="words" direction="top" className="inline-flex" /> <br />
-                  <BlurText text="ENGINEER" delay={200} animateBy="words" direction="top" className="inline-flex" />
+                  SOFTWARE <br />
+                  ENGINEER
                 </h2>
               </motion.div>
             </div>

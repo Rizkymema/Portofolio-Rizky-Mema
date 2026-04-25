@@ -15,10 +15,13 @@ import { ScrollSnapContainer, ScrollSnapSection } from '../components/ScrollSnap
 import { useState, useEffect } from 'react';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import PillNav from '../components/PillNav';
+import StaggeredMenu from '../components/StaggeredMenu';
 
 export default function App() {
   const [isDark, setIsDark] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isStaggeredOpen, setIsStaggeredOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const navItems = [
     { label: 'About', href: '#about' },
@@ -26,6 +29,26 @@ export default function App() {
     { label: 'Work', href: '#projects' },
     { label: 'Content', href: '#creator-hub' },
     { label: 'Contact', href: '#contact' }
+  ];
+
+  // List of all items for the Staggered Menu
+  const staggeredItems = [
+    { label: 'HOME', link: '#home' },
+    { label: 'ABOUT', link: '#about' },
+    { label: 'SKILLS', link: '#skills' },
+    { label: 'WORK', link: '#projects' },
+    { label: 'CONTENT', link: '#creator-hub' },
+    { label: 'EXPERIENCE', link: '#experience' },
+    { label: 'CERTIFICATIONS', link: '#certifications' },
+    { label: 'BLOG', link: '#blog' },
+    { label: 'CONTACT', link: '#contact' }
+  ];
+
+  const socialList = [
+    { label: 'GitHub', link: '#' },
+    { label: 'Instagram', link: '#' },
+    { label: 'TikTok', link: '#' },
+    { label: 'Facebook', link: '#' }
   ];
 
   useEffect(() => {
@@ -36,12 +59,29 @@ export default function App() {
     }
   }, [isDark]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      // Threshold to hide main nav and show hamburger
+      if (window.scrollY > 80) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <>
       {!isLoaded && <Preloader onComplete={() => setIsLoaded(true)} />}
       <main className={`w-full relative transition-colors duration-500 overflow-x-hidden ${!isLoaded ? 'h-screen overflow-hidden' : ''}`}>
-      {/* Top Nav */}
-      <nav className="fixed top-6 inset-x-4 md:inset-x-0 mx-auto max-w-5xl bg-[var(--bg-primary)]/80 backdrop-blur-2xl border border-border-subtle px-4 md:px-6 py-3 rounded-full z-50 shadow-lg shadow-black/5 dark:shadow-black/20 transition-colors duration-500">
+      
+      {/* 
+        Top Nav (PillNav) 
+        Will fade out and move up when scrolled
+      */}
+      <nav className={`fixed top-6 inset-x-4 md:inset-x-0 mx-auto max-w-5xl bg-[var(--bg-primary)]/80 backdrop-blur-2xl border border-border-subtle px-4 md:px-6 py-3 rounded-full z-50 shadow-lg shadow-black/5 dark:shadow-black/20 transition-all duration-500 ${isScrolled ? '-translate-y-24 opacity-0 pointer-events-none' : 'translate-y-0 opacity-100'}`}>
         <div className="absolute inset-0 w-full h-full bg-gradient-to-b from-[var(--bg-secondary)]/30 to-transparent rounded-full -z-10 pointer-events-none"></div>
         <div className="grid w-full grid-cols-[1fr_auto_1fr] items-center gap-3 md:gap-6">
           <div className="col-start-1 justify-self-start">
@@ -81,7 +121,7 @@ export default function App() {
       </nav>
 
       {/* Mobile Menu */}
-      <div className={`fixed top-28 inset-x-4 z-40 md:hidden transition-all duration-300 ${isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
+      <div className={`fixed top-28 inset-x-4 z-40 md:hidden transition-all duration-300 ${(!isScrolled && isMenuOpen) ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
         <div className="rounded-[28px] border border-border-subtle bg-[var(--bg-primary)]/85 p-3 shadow-xl shadow-black/10 dark:shadow-black/25 backdrop-blur-2xl">
           <div className="flex flex-col gap-2">
             {navItems.map((item) => (
@@ -103,6 +143,22 @@ export default function App() {
               Kontak Saya
             </a>
           </div>
+        </div>
+      </div>
+
+      {/* Floating Staggered Menu Component - Appears on Scroll */}
+      <div className={`fixed top-6 right-6 z-[60] transition-all duration-500 ${isScrolled ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}>
+        <div className="bg-bg-secondary/40 backdrop-blur-md rounded-full shadow-lg border border-border-subtle p-2 text-content flex items-center justify-center hover:bg-bg-tertiary transition-colors">
+          <StaggeredMenu
+            isOpen={isStaggeredOpen}
+            onToggle={() => setIsStaggeredOpen(!isStaggeredOpen)}
+            items={staggeredItems}
+            socialItems={socialList}
+            menuButtonColor={isDark ? '#ffffff' : '#0f172a'}
+            openMenuButtonColor="#ffffff"
+            colors={['#0F172A', '#1E293B']}
+            accentColor="#60A5FA"
+          />
         </div>
       </div>
       
