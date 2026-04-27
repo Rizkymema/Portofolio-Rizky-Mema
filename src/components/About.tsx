@@ -221,11 +221,9 @@ export const About = () => {
               </motion.div>
 
               {/* Lanyard Interactive Component */}
-              <div className="w-full h-[450px] lg:h-[800px] lg:absolute lg:top-0 lg:right-0 lg:w-[50%] flex justify-center items-center pointer-events-none z-[999] overflow-visible">
-                {/* Dibuat absolute terpusat dengan w dan h sangat besar (melebihi layar) agar area tarik luas */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200%] lg:w-[250%] h-[150%] pointer-events-auto scale-110 lg:scale-[1.20] overflow-visible">
-                  {/* position Z didekatkan dari 10 ke 7 untuk mengkompensasi height kanvas yang membesar */}
-                  <Lanyard position={[0, 0, 7]} gravity={[0, -40, 0]} />
+              <div className="w-full h-[450px] lg:h-[800px] lg:absolute lg:top-0 lg:right-0 lg:w-[50%] flex justify-center pointer-events-none z-[999] overflow-visible">
+                <div className="w-[150%] lg:w-[200%] shrink-0 h-full pointer-events-auto origin-top -mt-10 lg:mt-0 scale-110 lg:scale-[1.20] overflow-visible">
+                  <Lanyard position={[0, 0, 10]} gravity={[0, -40, 0]} />
                 </div>
               </div>
             </div>
