@@ -222,7 +222,7 @@ export const About = () => {
 
               {/* Lanyard Interactive Component */}
               <div className="w-full h-[450px] lg:h-[800px] lg:absolute lg:top-0 lg:right-0 lg:w-[50%] flex justify-center pointer-events-none z-[999] overflow-visible">
-                <div className="w-[150%] lg:w-[200%] shrink-0 h-full pointer-events-auto origin-top -mt-10 lg:mt-0 scale-110 lg:scale-[1.20] overflow-visible">
+                <div className="w-[150%] lg:w-[200%] shrink-0 h-full pointer-events-auto origin-top -mt-10 lg:mt-0 scale-110 lg:scale-125 overflow-visible">
                   <Lanyard position={[0, 0, 10]} gravity={[0, -40, 0]} />
                 </div>
               </div>
