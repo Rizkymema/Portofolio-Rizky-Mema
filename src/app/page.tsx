@@ -5,7 +5,6 @@ import { Hero } from '../components/Hero';
 import { About } from '../components/About';
 import { Skills } from '../components/Skills';
 import { FeaturedProjects } from '../components/FeaturedProjects';
-import { CreatorHub } from '../components/CreatorHub';
 import { Experience } from '../components/Experience';
 import { Certifications } from '../components/Certifications';
 import { Contact } from '../components/Contact';
@@ -26,7 +25,6 @@ export default function App() {
     { label: 'About', href: '#about' },
     { label: 'Skills', href: '#skills' },
     { label: 'Work', href: '#projects' },
-    { label: 'Content', href: '#creator-hub' },
     { label: 'Contact', href: '#contact' }
   ];
 
@@ -36,7 +34,6 @@ export default function App() {
     { label: 'ABOUT', link: '#about' },
     { label: 'SKILLS', link: '#skills' },
     { label: 'WORK', link: '#projects' },
-    { label: 'CONTENT', link: '#creator-hub' },
     { label: 'EXPERIENCE', link: '#experience' },
     { label: 'CERTIFICATIONS', link: '#certifications' },
     { label: 'CONTACT', link: '#contact' }
@@ -180,10 +177,6 @@ export default function App() {
 
           <ScrollSnapSection className="portfolio-section-shell">
             <FeaturedProjects />
-          </ScrollSnapSection>
-
-          <ScrollSnapSection className="portfolio-section-shell">
-            <CreatorHub />
           </ScrollSnapSection>
 
           <ScrollSnapSection className="portfolio-section-shell">

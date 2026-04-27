@@ -1,0 +1,14 @@
+{"logTime": "0425/182141", {"lineNo":0,"logLevel":2,"message":"MaybeOrchestrateMigration: MaybeOrchestrateMigration","source":"Workspace Migration","timestamp":"2026-04-25T18:21:41.960Z"}}
+{"logTime": "0425/182141", {"lineNo":0,"logLevel":2,"message":"Migrate_FeatureCheck: Migrate_FeatureCheck","source":"Workspace Migration","timestamp":"2026-04-25T18:21:41.978Z"}}
+{"logTime": "0425/182141", {"lineNo":0,"logLevel":2,"message":"Migrate_MaybeHavePrefs: Migrate_MaybeHavePrefs","source":"Workspace Migration","timestamp":"2026-04-25T18:21:41.979Z"}}
+{"logTime": "0425/182141", {"lineNo":0,"logLevel":2,"message":"Migrate_Schedule: Migrate_Schedule","source":"Workspace Migration","timestamp":"2026-04-25T18:21:41.979Z"}}
+{"logTime": "0425/182141", {"lineNo":0,"logLevel":2,"message":"MaybeOrchestrateMigration: ~MaybeOrchestrateMigration","source":"Workspace Migration","timestamp":"2026-04-25T18:21:41.980Z"}}
+{"logTime": "0426/011855", {"lineNo":0,"logLevel":2,"message":"MaybeOrchestrateMigration: MaybeOrchestrateMigration","source":"Workspace Migration","timestamp":"2026-04-26T01:18:55.053Z"}}
+{"logTime": "0426/011855", {"lineNo":0,"logLevel":2,"message":"Migrate_FeatureCheck: Migrate_FeatureCheck","source":"Workspace Migration","timestamp":"2026-04-26T01:18:55.055Z"}}
+{"logTime": "0426/011855", {"lineNo":0,"logLevel":2,"message":"Migrate_MaybeHavePrefs: Migrate_MaybeHavePrefs","source":"Workspace Migration","timestamp":"2026-04-26T01:18:55.056Z"}}
+{"logTime": "0426/011855", {"lineNo":0,"logLevel":2,"message":"Migrate_Schedule: Migrate_Schedule","source":"Workspace Migration","timestamp":"2026-04-26T01:18:55.056Z"}}
+{"logTime": "0426/011855", {"lineNo":0,"logLevel":2,"message":"Log: Migrate_WaitForNotInUse","source":"Workspace Migration","timestamp":"2026-04-26T01:18:55.057Z"}}
+{"logTime": "0426/011855", {"lineNo":0,"logLevel":2,"message":"Log: Migrate_MaybeAfterWorkspacesNotInUse","source":"Workspace Migration","timestamp":"2026-04-26T01:18:55.057Z"}}
+{"logTime": "0426/011855", {"lineNo":0,"logLevel":2,"message":"Log: Starting fluid...","source":"Workspace Migration","timestamp":"2026-04-26T01:18:55.057Z"}}
+{"logTime": "0426/011855", {"lineNo":0,"logLevel":2,"message":"ScopedFluidManagerLifetime: Starting Fluid Manager for Migration","source":"Workspace Migration","timestamp":"2026-04-26T01:18:55.057Z"}}
+{"logTime": "0426/011855", {"lineNo":0,"logLevel":2,"message":"MaybeOrchestrateMigration: ~MaybeOrchestrateMigration","source":"Workspace Migration","timestamp":"2026-04-26T01:18:55.057Z"}}
