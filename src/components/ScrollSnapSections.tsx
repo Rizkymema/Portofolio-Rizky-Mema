@@ -137,6 +137,18 @@ export const ScrollSnapContainer = ({ children, enabled = true }: ScrollSnapCont
       });
 
       const scheduleSnap = () => {
+        if (window.innerWidth < 768) {
+          // Hanya sync class/state di mobile, jangan paksa scroll animasi (menghindari bentrok dengan touch inertia)
+          if (scrollEndTimer !== null) {
+            window.clearTimeout(scrollEndTimer);
+          }
+          scrollEndTimer = window.setTimeout(() => {
+            scrollEndTimer = null;
+            syncActiveSection();
+          }, 160);
+          return;
+        }
+
         if (snapTween) {
           return;
         }
