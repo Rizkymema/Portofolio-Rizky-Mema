@@ -116,7 +116,7 @@ export const Hero = () => {
               <a href="#projects" className="btn-primary group flex w-full items-center justify-center pb-3 pt-3 text-center transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-blue-500/30 sm:w-auto">
                 Lihat Karya Saya <ArrowRight size={16} className="ml-2 transition-transform group-hover:translate-x-1" />
               </a>
-              <a href="#contact" className="btn-secondary group flex w-full items-center justify-center border-border-strong bg-surface-hover !text-content pb-3 pt-3 text-center transition-all duration-300 hover:-translate-y-0.5 hover:bg-surface-hover hover:shadow-lg hover:shadow-black/10 dark:hover:shadow-white/10 sm:w-auto">
+              <a href="https://drive.google.com/file/d/1aS-ggWSk7eqLYpcOooVWYpHDQm_997Kv/view?usp=sharing" target="_blank" rel="noreferrer" className="btn-secondary group flex w-full items-center justify-center border-border-strong bg-surface-hover !text-content pb-3 pt-3 text-center transition-all duration-300 hover:-translate-y-0.5 hover:bg-surface-hover hover:shadow-lg hover:shadow-black/10 dark:hover:shadow-white/10 sm:w-auto">
                 Unduh CV <ArrowDown size={16} className="ml-2 transition-transform group-hover:translate-y-1" />
               </a>
             </motion.div>
